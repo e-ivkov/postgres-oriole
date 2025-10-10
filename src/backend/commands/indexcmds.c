@@ -1206,6 +1206,7 @@ DefineIndex(Oid tableId,
 					 flags, constr_flags,
 					 allowSystemTableMods, !check_rights,
 					 &createdConstraintId);
+	elog(WARNING, "New index id: %u", indexRelationId);
 
 	ObjectAddressSet(address, RelationRelationId, indexRelationId);
 

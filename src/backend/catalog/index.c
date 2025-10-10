@@ -758,6 +758,8 @@ index_create(Relation heapRelation,
 	TransactionId relfrozenxid;
 	MultiXactId relminmxid;
 	bool		create_storage = !RelFileNumberIsValid(relFileNumber);
+	
+	elog(WARNING, "index_create: Creating index");
 
 	/* constraint flags can only be set when a constraint is requested */
 	Assert((constr_flags == 0) ||
